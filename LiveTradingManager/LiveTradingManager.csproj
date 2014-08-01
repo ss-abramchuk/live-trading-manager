@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0376FD7-958C-42D5-B198-8CFC34E541F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WLDSolutions.LiveTradingManager</RootNamespace>
+    <AssemblyName>LiveTradingManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release %28LiveTradingManager%29|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug %28LiveTradingManager%29|AnyCPU' ">
+    <OutputPath>..\..\..\..\..\..\..\..\..\..\Program Files %28x86%29\MS123\Wealth-Lab Developer 6\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fidelity.Components">
+      <HintPath>..\Vendors\Fidelity.Components.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Vendors\log4net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WealthLab">
+      <HintPath>..\Vendors\WealthLab.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WealthLab.Extensions.Attribute">
+      <HintPath>..\Vendors\WealthLab.Extensions.Attribute.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\LTBrokerProvider.cs" />
+    <Compile Include="Abstract\ILTSettingsProvider.cs" />
+    <Compile Include="Dispatcher\LTDispatcher.cs" />
+    <Compile Include="Dummies\DummyNoSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dummies\DummyNoSettings.Designer.cs">
+      <DependentUpon>DummyNoSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\MarketTimeZone.cs" />
+    <Compile Include="Helpers\OrderUpdeteInfo.cs" />
+    <Compile Include="Abstract\LTProductDescription.cs" />
+    <Compile Include="Abstract\LTAccount.cs" />
+    <Compile Include="Abstract\LTSettingsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Helpers\TimeZoneName.cs" />
+    <Compile Include="BrokerProvider\ZUniversalBrokerProvider.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\LiveTradingSettingsProvider.cs" />
+    <Compile Include="Settings\LiveTradingTimeZones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\LiveTradingTimeZones.Designer.cs">
+      <DependentUpon>LiveTradingTimeZones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiveTradingManager\LiveTradingManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LiveTradingManager\LiveTradingManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiveTradingManager\LiveTradingManagerForm.Designer.cs">
+      <DependentUpon>LiveTradingManagerForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dummies\DummyNoSettings.resx">
+      <DependentUpon>DummyNoSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\LiveTradingTimeZones.resx">
+      <DependentUpon>LiveTradingTimeZones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiveTradingManager\LiveTradingManagerForm.resx">
+      <DependentUpon>LiveTradingManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\iconRTT.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveTradingManager", "LiveTradingManager\LiveTradingManager.csproj", "{F0376FD7-958C-42D5-B198-8CFC34E541F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0376FD7-958C-42D5-B198-8CFC34E541F9}.Debug|Any CPU.ActiveCfg = Debug (LiveTradingManager)|Any CPU
+		{F0376FD7-958C-42D5-B198-8CFC34E541F9}.Debug|Any CPU.Build.0 = Debug (LiveTradingManager)|Any CPU
+		{F0376FD7-958C-42D5-B198-8CFC34E541F9}.Release|Any CPU.ActiveCfg = Release (LiveTradingManager)|Any CPU
+		{F0376FD7-958C-42D5-B198-8CFC34E541F9}.Release|Any CPU.Build.0 = Release (LiveTradingManager)|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal
